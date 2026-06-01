@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+/* ╔══════════════════════════════════════════════════════════════════╗
+   ║  CARTES MYTHOLOGIE — Olympus at Dusk                              ║
+   ║  Mythic baroque atmosphere · gilded · ceremonial                  ║
+   ╚══════════════════════════════════════════════════════════════════╝ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  /* ─── Palette ─── */
+  --bg-deep:      #07050a;            /* mahogany-black */
+  --bg-warm:      #120a08;            /* warm shadow */
+  --bg-purple:    #1a0d20;            /* deep purple-night */
+  --gold:         #c9a227;            /* core gold */
+  --gold-light:   #f5dfa0;            /* highlight */
+  --gold-dark:    #8a6a10;            /* shadow */
+  --gold-deep:    #4a3608;
+  --marble:       #f0e6c8;            /* warm body text */
+  --marble-dim:   #b8a987;
+  --wine:         #5a1a1a;            /* accent warmth */
+  --azure:        #5aaeff;            /* deity accent */
+  --emerald:      #4acf7a;            /* titan accent */
+  --amethyst:     #b07aef;            /* hero accent */
+  --crimson:      #e05050;            /* creature accent */
+
+  /* ─── Typography ─── */
+  --font-display: 'Cinzel Decorative', serif;
+  --font-title:   'Cinzel', serif;
+  --font-body:    'Cormorant Garamond', 'Cinzel', serif;
+
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Body & global atmosphere ─────────────────────────────────── */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  color: var(--marble);
+  background-color: var(--bg-deep);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  background:
+    /* Top temple light shaft */
+    radial-gradient(ellipse 1200px 600px at 50% -10%,
+      rgba(201, 162, 39, .18) 0%,
+      rgba(201, 162, 39, .04) 35%,
+      transparent 70%),
+    /* Bottom warm ember */
+    radial-gradient(ellipse 800px 400px at 50% 105%,
+      rgba(90, 26, 26, .25) 0%,
+      transparent 60%),
+    /* Left aubergine */
+    radial-gradient(ellipse 700px 1200px at 0% 30%,
+      rgba(40, 16, 48, .35) 0%,
+      transparent 55%),
+    /* Right warm shadow */
+    radial-gradient(ellipse 700px 1200px at 100% 70%,
+      rgba(48, 18, 8, .35) 0%,
+      transparent 55%),
+    var(--bg-deep);
+}
+
+/* ─── Grain noise overlay (subtle) ─────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .05;
+  z-index: 1000;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 .85  0 0 0 0 .8  0 0 0 0 .6  0 0 0 .9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+/* ─── Vignette ─────────────────────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: radial-gradient(ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, .35) 90%,
+    rgba(0, 0, 0, .65) 100%);
+}
+
+#root {
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Drifting dust motes (CSS-only) ───────────────────────────── */
+.dust {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+.dust span {
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 2px;
+  background: var(--gold-light);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(245, 223, 160, .8);
+  opacity: 0;
+  animation: drift linear infinite;
+}
+@keyframes drift {
+  0%   { transform: translate3d(0, 100vh, 0) scale(.4); opacity: 0; }
+  10%  { opacity: .7; }
+  90%  { opacity: .7; }
+  100% { transform: translate3d(20px, -10vh, 0) scale(1); opacity: 0; }
+}
+
+/* ─── Headings reset ───────────────────────────────────────────── */
+h1, h2, h3, p { margin: 0; }
+
+button {
+  touch-action: manipulation;
+  font-family: inherit;
+}
+
+/* ─── Selection ─── */
+::selection { background: rgba(201, 162, 39, .35); color: var(--gold-light); }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(201, 162, 39, .25); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201, 162, 39, .45); }
+
+/* ─── Shared keyframes ─────────────────────────────────────────── */
+@keyframes ember {
+  0%, 100% { text-shadow: 0 0 24px rgba(201,162,39,.4), 0 0 60px rgba(201,162,39,.15); }
+  50%      { text-shadow: 0 0 32px rgba(201,162,39,.55), 0 0 80px rgba(201,162,39,.25); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: scale(1); }
+}

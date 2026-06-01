@@ -1,0 +1,1621 @@
+{
+  "characters": [
+    {
+      "id": "zeus",
+      "num": 1,
+      "name": "Zeus",
+      "category": "dieu",
+      "description": "Roi des Dieux, Maître de la foudre. Grand séducteur, souvent métamorphe.",
+      "image": "ref/zeus.png",
+      "stats": {
+        "force": 71,
+        "magie": 99,
+        "ruse": 64,
+        "velocite": 33
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "hera",
+      "num": 2,
+      "name": "Héra",
+      "category": "dieu",
+      "description": "Reine des Dieux et Déesse du mariage. Très jalouse et courroucée.",
+      "image": "ref/hera.png",
+      "stats": {
+        "force": 45,
+        "magie": 75,
+        "ruse": 65,
+        "velocite": 34
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "poseidon",
+      "num": 3,
+      "name": "Poséidon",
+      "category": "dieu",
+      "description": "Dieu des mers et des séismes. Violent, susceptible et colérique.",
+      "image": "ref/poseidon.png",
+      "stats": {
+        "force": 80,
+        "magie": 85,
+        "ruse": 50,
+        "velocite": 27
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "demeter",
+      "num": 4,
+      "name": "Déméter",
+      "category": "dieu",
+      "description": "Déesse des moissons. Mère de Perséphone l'épouse d'Hadès.",
+      "image": "ref/demeter.png",
+      "stats": {
+        "force": 16,
+        "magie": 66,
+        "ruse": 40,
+        "velocite": 29
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "athena",
+      "num": 5,
+      "name": "Athéna",
+      "category": "dieu",
+      "description": "Déesse de la sagesse et de la stratégie. Froide, lucide, protectrice des cités.",
+      "image": "ref/athena.png",
+      "stats": {
+        "force": 43,
+        "magie": 44,
+        "ruse": 76,
+        "velocite": 28
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "apollon",
+      "num": 6,
+      "name": "Apollon",
+      "category": "dieu",
+      "description": "Dieu des arts et de la prophétie. Brillant, orgueilleux, guérisseur puissant.",
+      "image": "ref/apollon.png",
+      "stats": {
+        "force": 24,
+        "magie": 76,
+        "ruse": 77,
+        "velocite": 64
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "artemis",
+      "num": 7,
+      "name": "Artémis",
+      "category": "dieu",
+      "description": "Déesse de la Chasse. Protectrice des animaux sauvages.",
+      "image": "ref/artemis.png",
+      "stats": {
+        "force": 24,
+        "magie": 85,
+        "ruse": 71,
+        "velocite": 93
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "ares",
+      "num": 8,
+      "name": "Arès",
+      "category": "dieu",
+      "description": "Dieu de la Guerre et de la Violence. Fils de Zeus et Héra.",
+      "image": "ref/ares.png",
+      "stats": {
+        "force": 96,
+        "magie": 6,
+        "ruse": 7,
+        "velocite": 79
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "aphrodite",
+      "num": 9,
+      "name": "Aphrodite",
+      "category": "dieu",
+      "description": "Déesse du désir, charmeuse et manipulatrice, elle déclenche la passion.",
+      "image": "ref/aphrodite.png",
+      "stats": {
+        "force": 1,
+        "magie": 68,
+        "ruse": 83,
+        "velocite": 11
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "hermes",
+      "num": 10,
+      "name": "Hermès",
+      "category": "dieu",
+      "description": "Messager des dieux, malin, menteur, élégant et opportuniste.",
+      "image": "ref/hermes.png",
+      "stats": {
+        "force": 22,
+        "magie": 38,
+        "ruse": 95,
+        "velocite": 92
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "hestia",
+      "num": 11,
+      "name": "Hestia",
+      "category": "dieu",
+      "description": "Déesse du foyer, stable et pacifique, symbole de continuité et d'ordre.",
+      "image": "ref/hestia.png",
+      "stats": {
+        "force": 10,
+        "magie": 88,
+        "ruse": 53,
+        "velocite": 39
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "hephaistos",
+      "num": 13,
+      "name": "Héphaïstos",
+      "category": "dieu",
+      "description": "Forgeron divin, travailleur et rancunier, créateur d'objets/armes magiques.",
+      "image": "ref/hephaistos.png",
+      "stats": {
+        "force": 92,
+        "magie": 55,
+        "ruse": 11,
+        "velocite": 7
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "dionysos",
+      "num": 14,
+      "name": "Dionysos",
+      "category": "dieu",
+      "description": "Dieu du vin et de l'extase, libérateur et dangereux, apporte joie ou folie.",
+      "image": "ref/dionysos.png",
+      "stats": {
+        "force": 63,
+        "magie": 44,
+        "ruse": 67,
+        "velocite": 14
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "eros",
+      "num": 15,
+      "name": "Éros",
+      "category": "dieu",
+      "description": "Puissance du désir personnifié, imprévisible, déclenche l'amour.",
+      "image": "ref/eros.png",
+      "stats": {
+        "force": 8,
+        "magie": 61,
+        "ruse": 81,
+        "velocite": 75
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "pan",
+      "num": 16,
+      "name": "Pan",
+      "category": "dieu",
+      "description": "Dieu sauvage des bois, impulsif et moqueur, il inspire la \"panique\".",
+      "image": "ref/pan.png",
+      "stats": {
+        "force": 13,
+        "magie": 40,
+        "ruse": 81,
+        "velocite": 74
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "enyo",
+      "num": 17,
+      "name": "Ényo",
+      "category": "dieu",
+      "description": "Déesse de la fureur guerrière, agressive et sanglante. Épouse d'Arès.",
+      "image": "ref/enyo.png",
+      "stats": {
+        "force": 88,
+        "magie": 7,
+        "ruse": 8,
+        "velocite": 83
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "nemesis",
+      "num": 18,
+      "name": "Némésis",
+      "category": "dieu",
+      "description": "Déesse de la juste rétribution, froide, redoutable gardienne de la morale.",
+      "image": "ref/nemesis.png",
+      "stats": {
+        "force": 50,
+        "magie": 50,
+        "ruse": 50,
+        "velocite": 50
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "thoosa",
+      "num": 19,
+      "name": "Thoôsa",
+      "category": "dieu",
+      "description": "Déesse marine de la réflexion avant action. Elle est la mère de Polyphème.",
+      "image": "ref/thoosa.png",
+      "stats": {
+        "force": 60,
+        "magie": 41,
+        "ruse": 92,
+        "velocite": 16
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "cronos",
+      "num": 1,
+      "name": "Cronos",
+      "category": "titan",
+      "description": "Chef des Titans, contrôle le temps. Il mange ses enfants pour ne pas être détrôné.",
+      "image": "ref/cronos.png",
+      "stats": {
+        "force": 60,
+        "magie": 70,
+        "ruse": 40,
+        "velocite": 50
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "rhea",
+      "num": 2,
+      "name": "Rhéa",
+      "category": "titan",
+      "description": "Titanide de la fécondité, mère des Dieux Olympiens. Elle sauve Zeus en le cachant à Cronos.",
+      "image": "ref/rhea.png",
+      "stats": {
+        "force": 20,
+        "magie": 70,
+        "ruse": 55,
+        "velocite": 34
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "hyperion",
+      "num": 3,
+      "name": "Hypérion",
+      "category": "titan",
+      "description": "Titan de la lumière céleste et père d'Hélios.",
+      "image": "ref/hyperion.png",
+      "stats": {
+        "force": 70,
+        "magie": 60,
+        "ruse": 16,
+        "velocite": 86
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "theia",
+      "num": 4,
+      "name": "Théia",
+      "category": "titan",
+      "description": "Titanide cosmique, elle a enfanté toutes les planètes.",
+      "image": "ref/theia.png",
+      "stats": {
+        "force": 5,
+        "magie": 87,
+        "ruse": 30,
+        "velocite": 28
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "phebe",
+      "num": 5,
+      "name": "Phébé",
+      "category": "titan",
+      "description": "Titanide de la prophétie. Elle est très calme et sage.",
+      "image": "ref/phebe.png",
+      "stats": {
+        "force": 15,
+        "magie": 75,
+        "ruse": 90,
+        "velocite": 16
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "mnemosyne",
+      "num": 6,
+      "name": "Mnémosyne",
+      "category": "titan",
+      "description": "Titanide du langage. Elle a enfanté les 9 muses de son amour avec Zeus.",
+      "image": "ref/mnemosyne.png",
+      "stats": {
+        "force": 10,
+        "magie": 82,
+        "ruse": 88,
+        "velocite": 22
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "atlas",
+      "num": 7,
+      "name": "Atlas",
+      "category": "titan",
+      "description": "Titan colossal, il encaisse et écrase tout. Condamné à porter la voûte céleste par Zeus pour l'éternité.",
+      "image": "ref/atlas.png",
+      "stats": {
+        "force": 97,
+        "magie": 15,
+        "ruse": 2,
+        "velocite": 1
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "promethee",
+      "num": 8,
+      "name": "Prométhée",
+      "category": "titan",
+      "description": "Titan rusé. Il offre le feu aux hommes et est condamné à se faire dévorer le foie par un aigle.",
+      "image": "ref/promethee.png",
+      "stats": {
+        "force": 24,
+        "magie": 15,
+        "ruse": 97,
+        "velocite": 56
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "gaia",
+      "num": 9,
+      "name": "Gaïa",
+      "category": "titan",
+      "description": "Titanide primordiale de la Terre, mère des Titans, des Cyclopes et des Géants.",
+      "image": "ref/gaia.png",
+      "stats": {
+        "force": 15,
+        "magie": 90,
+        "ruse": 46,
+        "velocite": 50
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "ouranos",
+      "num": 10,
+      "name": "Ouranos",
+      "category": "titan",
+      "description": "Titan primordial du ciel nocturne étoilé. Mari de Gaïa, père des Titans, Cyclopes et Géants.",
+      "image": "ref/ouranos.png",
+      "stats": {
+        "force": 15,
+        "magie": 91,
+        "ruse": 40,
+        "velocite": 67
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "chaos",
+      "num": 11,
+      "name": "Chaos",
+      "category": "titan",
+      "description": "Titan primordial du vide. C'est un gouffre sans fond — si on y tombe, la chute est infinie.",
+      "image": "ref/chaos.png",
+      "stats": {
+        "force": 1,
+        "magie": 1,
+        "ruse": 100,
+        "velocite": 75
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "nyx",
+      "num": 12,
+      "name": "Nyx",
+      "category": "titan",
+      "description": "Titanide de la nuit primordiale, au-delà des enfers, où tout n'est qu'obscurité.",
+      "image": "ref/nyx.png",
+      "stats": {
+        "force": 7,
+        "magie": 85,
+        "ruse": 25,
+        "velocite": 60
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "tartare",
+      "num": 14,
+      "name": "Tartare",
+      "category": "titan",
+      "description": "Titan Prison, on y envoie les êtres les plus puissants pour éviter qu'ils ne s'enfuient.",
+      "image": "ref/tartare.png",
+      "stats": {
+        "force": 70,
+        "magie": 86,
+        "ruse": 1,
+        "velocite": 1
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "achlys",
+      "num": 15,
+      "name": "Achlys",
+      "category": "titan",
+      "description": "Titanide de la brume et de la mort. Personnification de la tristesse et de la misère. Fille de Chaos et Nyx.",
+      "image": "ref/achlys.png",
+      "stats": {
+        "force": 7,
+        "magie": 79,
+        "ruse": 10,
+        "velocite": 7
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "helios",
+      "num": 16,
+      "name": "Hélios",
+      "category": "titan",
+      "description": "Titan du Soleil. Père des 4 saisons et des douze Heures.",
+      "image": "ref/helios.png",
+      "stats": {
+        "force": 17,
+        "magie": 87,
+        "ruse": 26,
+        "velocite": 24
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "typhee",
+      "num": 17,
+      "name": "Typhée",
+      "category": "titan",
+      "description": "Titan de la destruction. Créature la plus puissante de la mythologie.",
+      "image": "ref/typhee.png",
+      "stats": {
+        "force": 88,
+        "magie": 96,
+        "ruse": 79,
+        "velocite": 94
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "selene",
+      "num": 18,
+      "name": "Séléné",
+      "category": "titan",
+      "description": "Titanide de la Lune, sœur d'Hélios. Elle est la personnification de la Lune.",
+      "image": "ref/selene.png",
+      "stats": {
+        "force": 58,
+        "magie": 51,
+        "ruse": 38,
+        "velocite": 28
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "themis",
+      "num": 22,
+      "name": "Thémis",
+      "category": "titan",
+      "description": "Titanide de la Justice, de la Loi et de l'Équité. Fille d'Ouranos et Gaïa.",
+      "image": "ref/themis.png",
+      "stats": {
+        "force": 3,
+        "magie": 50,
+        "ruse": 89,
+        "velocite": 16
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "tethys",
+      "num": 23,
+      "name": "Téthys",
+      "category": "titan",
+      "description": "Titanide des eaux et de la mer. Fille d'Ouranos et Gaïa.",
+      "image": "ref/tethys.png",
+      "stats": {
+        "force": 61,
+        "magie": 79,
+        "ruse": 40,
+        "velocite": 77
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "hercule",
+      "num": 1,
+      "name": "Hercule",
+      "category": "heros",
+      "description": "Héros à la force légendaire sans pouvoir magique, mais compense par la Force et la Ruse.",
+      "image": "ref/hercule.png",
+      "stats": {
+        "force": 99,
+        "magie": 13,
+        "ruse": 80,
+        "velocite": 40
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "achille",
+      "num": 2,
+      "name": "Achille",
+      "category": "heros",
+      "description": "Fils de Thétis qui l'a rendu invincible sauf au talon. Héros légendaire de la guerre de Troie.",
+      "image": "ref/achille.png",
+      "stats": {
+        "force": 85,
+        "magie": 18,
+        "ruse": 85,
+        "velocite": 65
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "ulysse",
+      "num": 3,
+      "name": "Ulysse",
+      "category": "heros",
+      "description": "Héros le plus rusé de Grèce, roi d'Ithaque. Triomphe de tout par sa Ruse malgré la colère des Dieux.",
+      "image": "ref/ulysse.png",
+      "stats": {
+        "force": 63,
+        "magie": 14,
+        "ruse": 99,
+        "velocite": 43
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "persee",
+      "num": 4,
+      "name": "Persée",
+      "category": "heros",
+      "description": "Fils de Zeus et Danaé. Il a vaincu Méduse et utilisé sa tête pour changer Atlas en montagne.",
+      "image": "ref/persee.png",
+      "stats": {
+        "force": 64,
+        "magie": 18,
+        "ruse": 84,
+        "velocite": 36
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "thesee",
+      "num": 5,
+      "name": "Thésée",
+      "category": "heros",
+      "description": "Vainqueur du Minotaure. Il suit le fil d'Ariane pour sortir du labyrinthe.",
+      "image": "ref/thesee.png",
+      "stats": {
+        "force": 68,
+        "magie": 3,
+        "ruse": 74,
+        "velocite": 48
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "bellerophon",
+      "num": 6,
+      "name": "Bellérophon",
+      "category": "heros",
+      "description": "Roi de Corinthe, fils de Poséidon. Il dompte Pégase et vainc la Chimère.",
+      "image": "ref/bellerophon.png",
+      "stats": {
+        "force": 68,
+        "magie": 2,
+        "ruse": 74,
+        "velocite": 67
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "jason",
+      "num": 7,
+      "name": "Jason",
+      "category": "heros",
+      "description": "Élevé par Chiron, connu pour sa quête de la Toison d'Or à bord de l'Argo.",
+      "image": "ref/jason.png",
+      "stats": {
+        "force": 13,
+        "magie": 83,
+        "ruse": 51,
+        "velocite": 22
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "orphee",
+      "num": 8,
+      "name": "Orphée",
+      "category": "heros",
+      "description": "Héros poète musicien. Sa lyre d'Apollon charme humains, animaux et même les Dieux.",
+      "image": "ref/orphee.png",
+      "stats": {
+        "force": 21,
+        "magie": 71,
+        "ruse": 56,
+        "velocite": 36
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "oedipe",
+      "num": 9,
+      "name": "Œdipe",
+      "category": "heros",
+      "description": "Vainqueur de l'énigme du Sphinx. Maudit par l'oracle de Delphes : il tuera son père et épousera sa mère.",
+      "image": "ref/oedipe.png",
+      "stats": {
+        "force": 37,
+        "magie": 6,
+        "ruse": 64,
+        "velocite": 25
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "menelas",
+      "num": 11,
+      "name": "Ménélas",
+      "category": "heros",
+      "description": "Mari d'Hélène, frère d'Agamemnon, Roi de Sparte. Caché dans le cheval de Troie.",
+      "image": "ref/menelas.png",
+      "stats": {
+        "force": 71,
+        "magie": 16,
+        "ruse": 38,
+        "velocite": 46
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "medee",
+      "num": 12,
+      "name": "Médée",
+      "category": "heros",
+      "description": "Princesse de Colchide, tombe amoureuse de Jason et l'aide à récupérer la Toison d'or.",
+      "image": "ref/medee.png",
+      "stats": {
+        "force": 16,
+        "magie": 84,
+        "ruse": 77,
+        "velocite": 11
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "patrocle",
+      "num": 14,
+      "name": "Patrocle",
+      "category": "heros",
+      "description": "Ami profond d'Achille, terrible guerrier Mirmidon lors de la guerre de Troie.",
+      "image": "ref/patrocle.png",
+      "stats": {
+        "force": 81,
+        "magie": 11,
+        "ruse": 44,
+        "velocite": 74
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "diomede",
+      "num": 15,
+      "name": "Diomède",
+      "category": "heros",
+      "description": "Roi d'Argos, terrible guerrier à Troie. Il réussit à blesser Aphrodite, Apollon et même Arès !",
+      "image": "ref/diomede.png",
+      "stats": {
+        "force": 75,
+        "magie": 29,
+        "ruse": 48,
+        "velocite": 64
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "icare",
+      "num": 17,
+      "name": "Icare",
+      "category": "heros",
+      "description": "Fils de Dédale. S'enfuit du labyrinthe avec des ailes de cire qui fondent au soleil.",
+      "image": "ref/icare.png",
+      "stats": {
+        "force": 35,
+        "magie": 8,
+        "ruse": 18,
+        "velocite": 92
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "hector",
+      "num": 18,
+      "name": "Hector",
+      "category": "heros",
+      "description": "Fils du roi Priam, il décime les Grecs. Tué par Achille en vengeance de la mort de Patrocle.",
+      "image": "ref/hector.png",
+      "stats": {
+        "force": 73,
+        "magie": 12,
+        "ruse": 54,
+        "velocite": 66
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "dedale",
+      "num": 19,
+      "name": "Dédale",
+      "category": "heros",
+      "description": "Il crée le Labyrinthe du Minotaure. Trahi, lui et son fils Icare y sont emprisonnés.",
+      "image": "ref/dedale.png",
+      "stats": {
+        "force": 32,
+        "magie": 14,
+        "ruse": 89,
+        "velocite": 7
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "pierre",
+      "num": 20,
+      "name": "Pierre",
+      "category": "heros",
+      "description": "Héros d'une grande puissance. Il utilise sa ruse pour tromper ses ennemis. Il est très rapide.",
+      "image": "ref/pierre.png",
+      "stats": {
+        "force": 84,
+        "magie": 16,
+        "ruse": 95,
+        "velocite": 81
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "camille",
+      "num": 24,
+      "name": "Camille",
+      "category": "heros",
+      "description": "Muse surpuissante, calme et aimante. Tire sa puissance du sommeil et de la lecture. Mère du héros Pierre.",
+      "image": "ref/camille.png",
+      "stats": {
+        "force": 61,
+        "magie": 68,
+        "ruse": 94,
+        "velocite": 71
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "benoit",
+      "num": 25,
+      "name": "Benoît",
+      "category": "heros",
+      "description": "Héros rusé, fabrique des outils pour se sortir de toutes les situations dangereuses. Père du héros Pierre.",
+      "image": "ref/benoit.png",
+      "stats": {
+        "force": 84,
+        "magie": 30,
+        "ruse": 94,
+        "velocite": 77
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "rabelais",
+      "num": 26,
+      "name": "Rabelais",
+      "category": "heros",
+      "description": "Terrible félin aux griffes tranchantes. N'obéit qu'à Benoît, Camille ou Pierre.",
+      "image": "ref/rabelais.png",
+      "stats": {
+        "force": 30,
+        "magie": 1,
+        "ruse": 85,
+        "velocite": 100
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "meduse",
+      "num": 1,
+      "name": "Méduse",
+      "category": "creature",
+      "description": "Gorgone au regard pétrifiant.",
+      "image": "ref/meduse.png",
+      "stats": {
+        "force": 15,
+        "magie": 70,
+        "ruse": 50,
+        "velocite": 26
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "minotaure",
+      "num": 2,
+      "name": "Minotaure",
+      "category": "creature",
+      "description": "Il erre dans son labyrinthe et mange ceux qui y sont enfermés.",
+      "image": "ref/minotaure.png",
+      "stats": {
+        "force": 89,
+        "magie": 4,
+        "ruse": 1,
+        "velocite": 54
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "polypheme",
+      "num": 3,
+      "name": "Polyphème",
+      "category": "creature",
+      "description": "Cyclope puissant mais crédule, il se fait rouler par Ulysse.",
+      "image": "ref/polypheme.png",
+      "stats": {
+        "force": 78,
+        "magie": 34,
+        "ruse": 6,
+        "velocite": 26
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "hydre",
+      "num": 4,
+      "name": "Hydre de Lerne",
+      "category": "creature",
+      "description": "Sa tête repousse par magie. Son sang est un terrible poison.",
+      "image": "ref/hydre.png",
+      "stats": {
+        "force": 62,
+        "magie": 64,
+        "ruse": 16,
+        "velocite": 31
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "cerbere",
+      "num": 5,
+      "name": "Cerbère",
+      "category": "creature",
+      "description": "Féroce gardien tricéphale des Enfers.",
+      "image": "ref/cerbere.png",
+      "stats": {
+        "force": 81,
+        "magie": 36,
+        "ruse": 24,
+        "velocite": 40
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "chimere",
+      "num": 6,
+      "name": "Chimère",
+      "category": "creature",
+      "description": "Corps de bouc, queue de serpent, tête de lion qui crache du feu.",
+      "image": "ref/chimere.png",
+      "stats": {
+        "force": 66,
+        "magie": 58,
+        "ruse": 19,
+        "velocite": 42
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "sphinx",
+      "num": 7,
+      "name": "Sphinx",
+      "category": "creature",
+      "description": "Monstre à corps de lion ailé. Elle pose des énigmes.",
+      "image": "ref/sphinx.png",
+      "stats": {
+        "force": 54,
+        "magie": 41,
+        "ruse": 74,
+        "velocite": 48
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "scylla",
+      "num": 8,
+      "name": "Scylla",
+      "category": "creature",
+      "description": "Nymphe changée par Circé en terrible hydre marine.",
+      "image": "ref/scylla.png",
+      "stats": {
+        "force": 66,
+        "magie": 48,
+        "ruse": 13,
+        "velocite": 32
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "charybde",
+      "num": 9,
+      "name": "Charybde",
+      "category": "creature",
+      "description": "Changée en monstre marin par Zeus. Elle utilise des tourbillons pour engloutir.",
+      "image": "ref/charybde.png",
+      "stats": {
+        "force": 25,
+        "magie": 73,
+        "ruse": 14,
+        "velocite": 17
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "harpies",
+      "num": 10,
+      "name": "Les Harpies",
+      "category": "creature",
+      "description": "Mi-femmes mi-oiseaux, plus rapides que le vent.",
+      "image": "ref/harpies.png",
+      "stats": {
+        "force": 65,
+        "magie": 13,
+        "ruse": 26,
+        "velocite": 81
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "dragon_colchide",
+      "num": 11,
+      "name": "Dragon de Colchide",
+      "category": "creature",
+      "description": "Gardien puissant de la Toison d'Or.",
+      "image": "ref/dragon_colchide.png",
+      "stats": {
+        "force": 83,
+        "magie": 74,
+        "ruse": 24,
+        "velocite": 26
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "sirenes",
+      "num": 12,
+      "name": "Les Sirènes",
+      "category": "creature",
+      "description": "Au chant envoûtant pour noyer et dévorer les hommes.",
+      "image": "ref/sirenes.png",
+      "stats": {
+        "force": 23,
+        "magie": 62,
+        "ruse": 73,
+        "velocite": 29
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "dragon_ares",
+      "num": 13,
+      "name": "Dragon d'Arès",
+      "category": "creature",
+      "description": "Protecteur de la fontaine d'Arès. Tué par le héros Cadmos.",
+      "image": "ref/dragon_ares.png",
+      "stats": {
+        "force": 70,
+        "magie": 62,
+        "ruse": 4,
+        "velocite": 33
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "sanglier",
+      "num": 14,
+      "name": "Sanglier d'Érymanthe",
+      "category": "creature",
+      "description": "Féroce, colossal et endurant.",
+      "image": "ref/sanglier.png",
+      "stats": {
+        "force": 81,
+        "magie": 22,
+        "ruse": 7,
+        "velocite": 59
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "lion_nemee",
+      "num": 15,
+      "name": "Lion de Némée",
+      "category": "creature",
+      "description": "Lion géant à la peau impénétrable.",
+      "image": "ref/lion_nemee.png",
+      "stats": {
+        "force": 75,
+        "magie": 36,
+        "ruse": 16,
+        "velocite": 68
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "lamia",
+      "num": 16,
+      "name": "Lamia",
+      "category": "creature",
+      "description": "Sorcière jeteuse de mauvais sorts.",
+      "image": "ref/lamia.png",
+      "stats": {
+        "force": 5,
+        "magie": 68,
+        "ruse": 64,
+        "velocite": 16
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "chiron",
+      "num": 17,
+      "name": "Chiron",
+      "category": "creature",
+      "description": "Centaure sage et immortel. Formateur de héros.",
+      "image": "ref/chiron.png",
+      "stats": {
+        "force": 61,
+        "magie": 3,
+        "ruse": 74,
+        "velocite": 28
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "pegase",
+      "num": 18,
+      "name": "Pégase",
+      "category": "creature",
+      "description": "Cheval ailé divin, fils de Poséidon.",
+      "image": "ref/pegase.png",
+      "stats": {
+        "force": 68,
+        "magie": 44,
+        "ruse": 15,
+        "velocite": 74
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "empousa",
+      "num": 19,
+      "name": "Empousa",
+      "category": "creature",
+      "description": "Démon femelle, Esprit frappeur.",
+      "image": "ref/empousa.png",
+      "stats": {
+        "force": 8,
+        "magie": 55,
+        "ruse": 64,
+        "velocite": 70
+      },
+      "imageQuality": "crop"
+    },
+    {
+      "id": "circe",
+      "num": 20,
+      "name": "Circé",
+      "category": "creature",
+      "description": "Magicienne puissante, fille d'Hélios, spécialisée en poisons et potions.",
+      "image": "ref/circe.png",
+      "stats": {
+        "force": 13,
+        "magie": 83,
+        "ruse": 51,
+        "velocite": 22
+      },
+      "imageQuality": "hq"
+    },
+    {
+      "id": "silene",
+      "num": 21,
+      "name": "Silène",
+      "category": "creature",
+      "description": "Satyre, père adoptif de Dionysos. Incarnation du vin et de l'Ivresse.",
+      "image": "ref/silene.png",
+      "stats": {
+        "force": 18,
+        "magie": 41,
+        "ruse": 59,
+        "velocite": 33
+      },
+      "imageQuality": "hq"
+    }
+  ],
+  "events": [
+    {
+      "id": "destin_brise",
+      "num": 1,
+      "name": "Destin Brisé",
+      "image": "Event/01 Destin brisé.png",
+      "rule": "Tous les héros meurent : les cartes Héros sont retirées du pli. Si tous les joueurs jouent un Héros, repiocher.",
+      "effect": {
+        "type": "eliminate_category",
+        "targets": [
+          "heros"
+        ],
+        "fallback": "redraw"
+      }
+    },
+    {
+      "id": "oracle_delphes",
+      "num": 2,
+      "name": "Oracle de Delphes",
+      "image": "Event/01 Oracle de Thèbes.png",
+      "rule": "Tous les joueurs annoncent le nom de leur carte avant que le meneur choisisse la stat d'attaque.",
+      "effect": {
+        "type": "reveal_cards"
+      }
+    },
+    {
+      "id": "destinee_heroique",
+      "num": 3,
+      "name": "Destinée Héroïque",
+      "image": "Event/03 Destinée héroïque.png",
+      "rule": "Les cartes Héros gagnent +10 Force et +10 Magie ce pli.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "heros"
+        ],
+        "modifiers": {
+          "force": 10,
+          "magie": 10
+        }
+      }
+    },
+    {
+      "id": "titanomachie",
+      "num": 4,
+      "name": "Titanomachie",
+      "image": "Event/04 Titanomachie.png",
+      "rule": "Les Titans perdent 10 en toutes stats. Exception : Tartare gagne +10 en toutes stats.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "titan"
+        ],
+        "modifiers": {
+          "force": -10,
+          "magie": -10,
+          "ruse": -10,
+          "velocite": -10
+        },
+        "exceptions": [
+          {
+            "card_id": "tartare",
+            "modifiers": {
+              "force": 10,
+              "magie": 10,
+              "ruse": 10,
+              "velocite": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "colere_divine",
+      "num": 5,
+      "name": "Colère Divine",
+      "image": "Event/05 Colère Divine.png",
+      "rule": "Les Dieux gagnent +20 Magie et +20 Force, mais perdent −20 Ruse.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "dieu"
+        ],
+        "modifiers": {
+          "force": 20,
+          "magie": 20,
+          "ruse": -20
+        }
+      }
+    },
+    {
+      "id": "bestiaire_antique",
+      "num": 6,
+      "name": "Bestiaire Antique",
+      "image": "Event/06 Bestiaire Antique.png",
+      "rule": "Les Créatures gagnent +20 Ruse ce pli.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "creature"
+        ],
+        "modifiers": {
+          "ruse": 20
+        }
+      }
+    },
+    {
+      "id": "apesanteur",
+      "num": 7,
+      "name": "En Apesanteur !",
+      "image": "Event/07 Apesenteur.png",
+      "rule": "La Vélocité de toutes les cartes est ramenée à 0 ce pli.",
+      "effect": {
+        "type": "stat_set",
+        "targets": [
+          "dieu",
+          "titan",
+          "heros",
+          "creature"
+        ],
+        "set": {
+          "velocite": 0
+        }
+      }
+    },
+    {
+      "id": "liliputiens",
+      "num": 8,
+      "name": "Liliputiens",
+      "image": "Event/08 Liliputiens.png",
+      "rule": "Les non-Héros rapetissent : Dieux, Titans et Créatures perdent −20 Force et −20 Magie.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "dieu",
+          "titan",
+          "creature"
+        ],
+        "modifiers": {
+          "force": -20,
+          "magie": -20
+        }
+      }
+    },
+    {
+      "id": "alea_jacta_est",
+      "num": 9,
+      "name": "Alea Jacta Est",
+      "image": "Event/09 Alea jacta est !.png",
+      "rule": "Le meneur choisit une stat parmi Force, Ruse ou Magie. Tous ses adversaires perdent −10 dans cette stat.",
+      "effect": {
+        "type": "leader_debuff",
+        "stat_choices": [
+          "force",
+          "ruse",
+          "magie"
+        ],
+        "modifier": -10,
+        "targets": "opponents"
+      }
+    },
+    {
+      "id": "potion_force",
+      "num": 10,
+      "name": "Potion de Force",
+      "image": "Event/10 PotionF.png",
+      "rule": "La carte jouée avec la Force inférieure à 55 gagne +30 Force ce pli.",
+      "effect": {
+        "type": "underdog_boost",
+        "stat": "force",
+        "modifier": 30,
+        "condition": {
+          "stat": "force",
+          "operator": "<",
+          "value": 55
+        }
+      }
+    },
+    {
+      "id": "potion_magie",
+      "num": 10,
+      "name": "Potion de Magie",
+      "image": "Event/10 PotionM.png",
+      "rule": "La carte jouée avec la Magie inférieure à 55 gagne +30 Magie ce pli.",
+      "effect": {
+        "type": "underdog_boost",
+        "stat": "magie",
+        "modifier": 30,
+        "condition": {
+          "stat": "magie",
+          "operator": "<",
+          "value": 55
+        }
+      }
+    },
+    {
+      "id": "potion_ruse",
+      "num": 10,
+      "name": "Potion de Ruse",
+      "image": "Event/10 PotionR.png",
+      "rule": "La carte jouée avec la Ruse inférieure à 55 gagne +30 Ruse ce pli.",
+      "effect": {
+        "type": "underdog_boost",
+        "stat": "ruse",
+        "modifier": 30,
+        "condition": {
+          "stat": "ruse",
+          "operator": "<",
+          "value": 55
+        }
+      }
+    },
+    {
+      "id": "potion_velocite",
+      "num": 10,
+      "name": "Potion de Vélocité",
+      "image": "Event/10 PotionV.png",
+      "rule": "La carte jouée avec la Vélocité inférieure à 55 gagne +30 Vélocité ce pli.",
+      "effect": {
+        "type": "underdog_boost",
+        "stat": "velocite",
+        "modifier": 30,
+        "condition": {
+          "stat": "velocite",
+          "operator": "<",
+          "value": 55
+        }
+      }
+    },
+    {
+      "id": "olympiade",
+      "num": 11,
+      "name": "Olympiade",
+      "image": "ref/evenements/olympiade.png",
+      "rule": "Les Héros gagnent +20 en Force et +20 en Vélocité.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "heros"
+        ],
+        "modifiers": {
+          "force": 20,
+          "velocite": 20
+        }
+      }
+    },
+    {
+      "id": "malediction_circe",
+      "num": 12,
+      "name": "Malédiction de Circé",
+      "image": "ref/evenements/malediction_circe.png",
+      "rule": "La Magie des Dieux est réduite à 10.",
+      "effect": {
+        "type": "stat_set",
+        "targets": [
+          "dieu"
+        ],
+        "set": {
+          "magie": 10
+        }
+      }
+    },
+    {
+      "id": "chant_sirenes",
+      "num": 13,
+      "name": "Chant des Sirènes",
+      "image": "ref/evenements/chant_sirenes.png",
+      "rule": "Les Créatures gagnent +15 en Ruse et en Magie.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "creature"
+        ],
+        "modifiers": {
+          "ruse": 15,
+          "magie": 15
+        }
+      }
+    },
+    {
+      "id": "feu_promethee",
+      "num": 14,
+      "name": "Feu de Prométhée",
+      "image": "ref/evenements/feu_promethee.png",
+      "rule": "Toutes les cartes gagnent +10 en Force.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "dieu",
+          "titan",
+          "heros",
+          "creature"
+        ],
+        "modifiers": {
+          "force": 10
+        }
+      }
+    },
+    {
+      "id": "labyrinthe",
+      "num": 15,
+      "name": "Labyrinthe de Dédale",
+      "image": "ref/evenements/labyrinthe.png",
+      "rule": "Les cartes ayant moins de 40 en Ruse sont réduites à 5.",
+      "effect": {
+        "type": "underdog_boost",
+        "targets": [
+          "dieu",
+          "titan",
+          "heros",
+          "creature"
+        ],
+        "stat": "ruse",
+        "condition": {
+          "stat": "ruse",
+          "operator": "<",
+          "value": 40
+        },
+        "modifier": -100
+      }
+    },
+    {
+      "id": "vol_icare",
+      "num": 16,
+      "name": "Vol d'Icare",
+      "image": "ref/evenements/vol_icare.png",
+      "rule": "La Vélocité est doublée pour toutes les cartes (max 100).",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "dieu",
+          "titan",
+          "heros",
+          "creature"
+        ],
+        "modifiers": {
+          "velocite": 50
+        }
+      }
+    },
+    {
+      "id": "boite_pandore",
+      "num": 17,
+      "name": "Boîte de Pandore",
+      "image": "ref/evenements/boite_pandore.png",
+      "rule": "Les Créatures gagnent +30 en toutes stats (le mal est libéré).",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "creature"
+        ],
+        "modifiers": {
+          "force": 30,
+          "magie": 30,
+          "ruse": 30,
+          "velocite": 30
+        }
+      }
+    },
+    {
+      "id": "epreuve_hercule",
+      "num": 18,
+      "name": "Travaux d'Hercule",
+      "image": "ref/evenements/epreuve_hercule.png",
+      "rule": "Les Héros gagnent +25 en Force, exception pour les peu robustes.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "heros"
+        ],
+        "modifiers": {
+          "force": 25
+        },
+        "exceptions": [
+          {
+            "card_id": "icare",
+            "modifiers": {
+              "force": -10
+            }
+          },
+          {
+            "card_id": "dedale",
+            "modifiers": {
+              "force": -10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "nuit_styx",
+      "num": 19,
+      "name": "Eaux du Styx",
+      "image": "ref/evenements/nuit_styx.png",
+      "rule": "Les Titans regagnent leurs anciens pouvoirs : +20 en Force et en Magie.",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "titan"
+        ],
+        "modifiers": {
+          "force": 20,
+          "magie": 20
+        }
+      }
+    },
+    {
+      "id": "danse_muses",
+      "num": 20,
+      "name": "Danse des Muses",
+      "image": "ref/evenements/danse_muses.png",
+      "rule": "Toutes les Magies sont doublées (max 100).",
+      "effect": {
+        "type": "stat_modifier",
+        "targets": [
+          "dieu",
+          "titan",
+          "heros",
+          "creature"
+        ],
+        "modifiers": {
+          "magie": 50
+        }
+      }
+    }
+  ],
+  "_meta": {
+    "total_characters": 78,
+    "by_category": {
+      "dieu": 18,
+      "titan": 19,
+      "heros": 20,
+      "creature": 21
+    },
+    "total_events": 13,
+    "scoring": "1 pièce d'or par carte gagnée (flat)",
+    "rules": {
+      "leader": "rotation fixe (sens des aiguilles)",
+      "tie": "rejouer le pli, les cartes s'accumulent au centre",
+      "won_cards": "cagnotte de score personnelle"
+    },
+    "notes": [
+      "Mnémosyne corrigée à 10/82/88/22 (était identique à Phébé 15/75/90/16)",
+      "Icare corrigé à 35/8/18/92 (était identique à Hercule 99/13/80/40)",
+      "Les cartes famille (Pierre, Camille, Benoît, Rabelais) sont incluses dans la catégorie heros"
+    ]
+  }
+}

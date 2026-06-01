@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartes Mythologie — Design grec antique</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d0b08;
+    color: #f0e6c8;
+    font-family: 'Cinzel', serif;
+    min-height: 100vh;
+    padding: 48px 20px 80px;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.5rem;
+    color: #c9a227;
+    letter-spacing: .2em;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: .72rem;
+    color: #6a5a38;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-bottom: 52px;
+  }
+
+  .cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* ═══════════════════════════════════════
+     CARD
+  ═══════════════════════════════════════ */
+  .card {
+    width: 272px;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+      0 0 0 1px rgba(201,162,39,.35),
+      0 0 0 3px rgba(0,0,0,.8),
+      0 14px 52px rgba(0,0,0,.85),
+      inset 0 1px 0 rgba(255,230,130,.12);
+    background: #1a130a;
+  }
+
+  /* Category colour accent */
+  .card[data-cat="dieu"]     { --gem-a:#7ac4ff; --gem-b:#1a6abf; --gem-c:#0d3d7a; --glow:rgba(90,174,255,.4);  }
+  .card[data-cat="titan"]    { --gem-a:#80f0a0; --gem-b:#1f9e4a; --gem-c:#0d5c28; --glow:rgba(74,207,122,.4);  }
+  .card[data-cat="heros"]    { --gem-a:#d0a0ff; --gem-b:#8040d0; --gem-c:#4a1a7a; --glow:rgba(176,122,239,.4); }
+  .card[data-cat="creature"] { --gem-a:#ff9080; --gem-b:#c02020; --gem-c:#6a0d0d; --glow:rgba(224,80,80,.4);   }
+
+  /* ── Top meander strip (outside portrait) ── */
+  .card-strip {
+    height: 18px;
+    background: rgba(0,0,0,.55);
+    border-bottom: 1px solid rgba(201,162,39,.4);
+    overflow: visible;   /* gem peut dépasser */
+    flex-shrink: 0;
+    position: relative;
+    z-index: 4;
+  }
+  .card-strip.bot {
+    border-top: 1px solid rgba(201,162,39,.4);
+    border-bottom: none;
+    overflow: hidden;    /* bas n'a pas de gem */
+  }
+  .card-strip svg { display: block; width: 100%; height: 16px; margin-top: 1px; opacity: .7; }
+
+  /* ── Portrait block — hauteur calée sur le ratio paysage 600×455 → 272×206 + marges ── */
+  .portrait-block {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    height: 230px;
+  }
+  /* Couche de fond : image floutée/assombrie pour remplir l'espace */
+  .portrait-backdrop {
+    position: absolute;
+    inset: -30px;
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    filter: blur(24px) brightness(.35) saturate(.5);
+  }
+  /* Image principale : ratio préservé, centrée, sans blanc */
+  .portrait-img {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* HQ : filtre léger */
+    filter: brightness(.78) contrast(1.22) sepia(8%);
+  }
+  /* Crop de carte physique : contraste poussé */
+  .portrait-img[data-q="crop"] {
+    filter: brightness(.62) contrast(1.72) sepia(15%) saturate(1.3);
+  }
+  /* Dégradé plus court pour ne pas mordre sur l'image paysage */
+  .portrait-block::after {
+    height: 100px;
+    background: linear-gradient(to top, rgba(10,7,3,.98) 0%, rgba(10,7,3,.55) 45%, transparent 100%);
+  }
+  /* Dégradé : image fond vers le noir sur toute la partie basse */
+  .portrait-block::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 140px;
+    background: linear-gradient(to top, rgba(10,7,3,.95) 0%, rgba(10,7,3,.5) 40%, transparent 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* ── Gem — incrustée dans la frise du haut ── */
+  .gem-overlay {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    z-index: 6;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 38% 32%, rgba(255,230,120,.15) 0%, transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(14,9,3,.92) 30%, rgba(4,2,0,.98) 100%);
+    box-shadow:
+      0 0 0 1.5px rgba(201,162,39,.9),
+      0 0 0 3px rgba(0,0,0,.7),
+      0 0 12px var(--glow),
+      inset 0 1px 0 rgba(255,230,100,.35),
+      inset 0 -1px 0 rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gem-overlay svg {
+    filter: drop-shadow(0 0 3px var(--glow));
+  }
+
+  /* ── Bandeau nom — transparent en haut, sombre en bas ── */
+  .name-band {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 62px;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 36px 10px;
+    background: transparent;
+  }
+  /* Losanges décoratifs de part et d'autre */
+  .name-band::before, .name-band::after {
+    content: '◆';
+    position: absolute;
+    bottom: 12px;
+    font-size: .55rem;
+    color: rgba(201,162,39,.6);
+  }
+  .name-band::before { left: 12px; }
+  .name-band::after  { right: 12px; }
+
+  .card-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f5dfa0;
+    letter-spacing: .08em;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,.95), 0 0 20px rgba(201,162,39,.25);
+  }
+
+  /* ── Stats block ── */
+  .stats-block {
+    padding: 10px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 22px 1fr 38px;
+    align-items: center;
+    gap: 8px;
+  }
+  .stat-icon {
+    font-size: .85rem;
+    text-align: center;
+    opacity: .75;
+  }
+  .stat-bar-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .stat-label {
+    font-size: .52rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(220,190,120,.5);
+    line-height: 1;
+  }
+  .stat-track {
+    height: 9px;
+    background: rgba(0,0,0,.6);
+    border-radius: 5px;
+    border: 1px solid rgba(201,162,39,.18);
+    overflow: hidden;
+  }
+  .stat-fill {
+    height: 100%;
+    border-radius: 5px;
+  }
+  .stat-val {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    text-align: right;
+    line-height: 1;
+  }
+  /* Peak: glow overlay, color driven by JS */
+  .stat-row.peak .stat-fill   { box-shadow: 0 0 10px var(--heat, rgba(200,200,200,.4)); }
+  .stat-row.peak .stat-icon   { opacity: 1; filter: drop-shadow(0 0 4px var(--heat, rgba(200,200,200,.4))); }
+  .stat-row.peak .stat-label  { color: rgba(255,255,255,.7); }
+
+  /* ═══════════════════════════════════════
+     CARD BACK — marbre SVG + Oméga gravé
+  ═══════════════════════════════════════ */
+  .card-back {
+    width: 272px;
+    height: 460px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 0 0 1px rgba(160,150,140,.5),
+      0 0 0 3px rgba(0,0,0,.8),
+      0 14px 52px rgba(0,0,0,.85);
+    background: #ccc;
+  }
+  .back-marble-svg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<h1>Cartes Mythologie</h1>
+<p class="subtitle">Design grec antique</p>
+
+<!-- SVG symbols -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="m" viewBox="0 0 80 14" preserveAspectRatio="xMinYMid meet">
+      <path d="M0,7 L4,7 4,2 18,2 18,12 10,12 10,9 14,9 14,5 10,5 10,12 22,12 22,2 32,2 32,7 28,7 28,5 32,5
+               M40,7 L44,7 44,2 58,2 58,12 50,12 50,9 54,9 54,5 50,5 50,12 62,12 62,2 72,2 72,7 68,7 68,5 72,5 72,12 80,12"
+            fill="none" stroke="rgba(201,162,39,0.7)" stroke-width="1.1" stroke-linecap="square"/>
+    </symbol>
+    <!-- Gem shapes — taille brillant ronde avec facettes -->
+    <symbol id="gem-dieu" viewBox="0 0 28 28">
+      <defs>
+        <radialGradient id="gd" cx="38%" cy="32%" r="62%">
+          <stop offset="0%"   stop-color="#e8f6ff"/>
+          <stop offset="28%"  stop-color="#6dc0f5"/>
+          <stop offset="65%"  stop-color="#1a6abf"/>
+          <stop offset="100%" stop-color="#061e45"/>
+        </radialGradient>
+      </defs>
+      <circle cx="14" cy="14" r="12" fill="url(#gd)"/>
+      <!-- Table centrale (hexagone) -->
+      <polygon points="14,7 19.2,10.5 19.2,17.5 14,21 8.8,17.5 8.8,10.5" fill="none" stroke="rgba(180,230,255,.5)" stroke-width=".7"/>
+      <!-- Facettes couronne -->
+      <line x1="14" y1="7"    x2="14" y2="2"    stroke="rgba(180,230,255,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="10.5" x2="24" y2="8"  stroke="rgba(180,230,255,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="17.5" x2="24" y2="20" stroke="rgba(100,180,255,.25)" stroke-width=".6"/>
+      <line x1="14" y1="21"   x2="14" y2="26"   stroke="rgba(100,180,255,.25)" stroke-width=".6"/>
+      <line x1="8.8" y1="17.5" x2="4"  y2="20"  stroke="rgba(100,180,255,.2)"  stroke-width=".6"/>
+      <line x1="8.8" y1="10.5" x2="4"  y2="8"   stroke="rgba(180,230,255,.3)"  stroke-width=".6"/>
+      <!-- Reflet haut-gauche -->
+      <ellipse cx="10.5" cy="9.5" rx="3.5" ry="2.2" fill="rgba(255,255,255,.42)" transform="rotate(-30,10.5,9.5)"/>
+    </symbol>
+
+    <symbol id="gem-titan" viewBox="0 0 28 28">
+      <defs>
+        <radialGradient id="gt" cx="38%" cy="32%" r="62%">
+          <stop offset="0%"   stop-color="#dffff0"/>
+          <stop offset="28%"  stop-color="#50d880"/>
+          <stop offset="65%"  stop-color="#1a8040"/>
+          <stop offset="100%" stop-color="#052212"/>
+        </radialGradient>
+      </defs>
+      <circle cx="14" cy="14" r="12" fill="url(#gt)"/>
+      <polygon points="14,7 19.2,10.5 19.2,17.5 14,21 8.8,17.5 8.8,10.5" fill="none" stroke="rgba(160,255,200,.5)" stroke-width=".7"/>
+      <line x1="14" y1="7"    x2="14" y2="2"    stroke="rgba(160,255,200,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="10.5" x2="24" y2="8"  stroke="rgba(160,255,200,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="17.5" x2="24" y2="20" stroke="rgba(80,200,120,.25)"  stroke-width=".6"/>
+      <line x1="14" y1="21"   x2="14" y2="26"   stroke="rgba(80,200,120,.25)"  stroke-width=".6"/>
+      <line x1="8.8" y1="17.5" x2="4"  y2="20"  stroke="rgba(80,200,120,.2)"   stroke-width=".6"/>
+      <line x1="8.8" y1="10.5" x2="4"  y2="8"   stroke="rgba(160,255,200,.3)"  stroke-width=".6"/>
+      <ellipse cx="10.5" cy="9.5" rx="3.5" ry="2.2" fill="rgba(255,255,255,.40)" transform="rotate(-30,10.5,9.5)"/>
+    </symbol>
+
+    <symbol id="gem-heros" viewBox="0 0 28 28">
+      <defs>
+        <radialGradient id="gh" cx="38%" cy="32%" r="62%">
+          <stop offset="0%"   stop-color="#f0e0ff"/>
+          <stop offset="28%"  stop-color="#b060f0"/>
+          <stop offset="65%"  stop-color="#6020b0"/>
+          <stop offset="100%" stop-color="#1a0540"/>
+        </radialGradient>
+      </defs>
+      <circle cx="14" cy="14" r="12" fill="url(#gh)"/>
+      <polygon points="14,7 19.2,10.5 19.2,17.5 14,21 8.8,17.5 8.8,10.5" fill="none" stroke="rgba(220,170,255,.5)" stroke-width=".7"/>
+      <line x1="14" y1="7"    x2="14" y2="2"    stroke="rgba(220,170,255,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="10.5" x2="24" y2="8"  stroke="rgba(220,170,255,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="17.5" x2="24" y2="20" stroke="rgba(150,80,220,.25)"  stroke-width=".6"/>
+      <line x1="14" y1="21"   x2="14" y2="26"   stroke="rgba(150,80,220,.25)"  stroke-width=".6"/>
+      <line x1="8.8" y1="17.5" x2="4"  y2="20"  stroke="rgba(150,80,220,.2)"   stroke-width=".6"/>
+      <line x1="8.8" y1="10.5" x2="4"  y2="8"   stroke="rgba(220,170,255,.3)"  stroke-width=".6"/>
+      <ellipse cx="10.5" cy="9.5" rx="3.5" ry="2.2" fill="rgba(255,255,255,.45)" transform="rotate(-30,10.5,9.5)"/>
+    </symbol>
+
+    <symbol id="gem-creature" viewBox="0 0 28 28">
+      <defs>
+        <radialGradient id="gc" cx="38%" cy="32%" r="62%">
+          <stop offset="0%"   stop-color="#ffe0d8"/>
+          <stop offset="28%"  stop-color="#e83030"/>
+          <stop offset="65%"  stop-color="#9a0f0f"/>
+          <stop offset="100%" stop-color="#280404"/>
+        </radialGradient>
+      </defs>
+      <circle cx="14" cy="14" r="12" fill="url(#gc)"/>
+      <polygon points="14,7 19.2,10.5 19.2,17.5 14,21 8.8,17.5 8.8,10.5" fill="none" stroke="rgba(255,170,150,.5)" stroke-width=".7"/>
+      <line x1="14" y1="7"    x2="14" y2="2"    stroke="rgba(255,170,150,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="10.5" x2="24" y2="8"  stroke="rgba(255,170,150,.35)" stroke-width=".6"/>
+      <line x1="19.2" y1="17.5" x2="24" y2="20" stroke="rgba(180,30,30,.25)"   stroke-width=".6"/>
+      <line x1="14" y1="21"   x2="14" y2="26"   stroke="rgba(180,30,30,.25)"   stroke-width=".6"/>
+      <line x1="8.8" y1="17.5" x2="4"  y2="20"  stroke="rgba(180,30,30,.2)"    stroke-width=".6"/>
+      <line x1="8.8" y1="10.5" x2="4"  y2="8"   stroke="rgba(255,170,150,.3)"  stroke-width=".6"/>
+      <ellipse cx="10.5" cy="9.5" rx="3.5" ry="2.2" fill="rgba(255,255,255,.42)" transform="rotate(-30,10.5,9.5)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="cards-row">
+
+  <!-- ══ ZEUS ══ -->
+  <div class="card" data-cat="dieu">
+    <div class="card-strip">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+      <div class="gem-overlay"><svg width="16" height="16" viewBox="0 0 28 28"><use href="#gem-dieu"/></svg></div>
+    </div>
+    <div class="portrait-block">
+      <div class="portrait-backdrop" style="background-image:url('/ref/illus/zeus.png')"></div>
+      <div class="portrait-img" style="background-image:url('/ref/illus/zeus.png')"></div>
+      <div class="name-band"><div class="card-name">Zeus</div></div>
+    </div>
+    <div class="stats-block">
+      <div class="stat-row">
+        <div class="stat-icon">⚔️</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Force</div><div class="stat-track"><div class="stat-fill" style="width:71%"></div></div></div>
+        <div class="stat-val">71</div>
+      </div>
+      <div class="stat-row peak">
+        <div class="stat-icon">✨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Magie</div><div class="stat-track"><div class="stat-fill" style="width:99%"></div></div></div>
+        <div class="stat-val">99</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">🦉</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Ruse</div><div class="stat-track"><div class="stat-fill" style="width:64%"></div></div></div>
+        <div class="stat-val">64</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">💨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Vélocité</div><div class="stat-track"><div class="stat-fill" style="width:33%"></div></div></div>
+        <div class="stat-val">33</div>
+      </div>
+    </div>
+    <div class="card-strip bot">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+    </div>
+  </div>
+
+  <!-- ══ ATLAS ══ -->
+  <div class="card" data-cat="titan">
+    <div class="card-strip">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+      <div class="gem-overlay"><svg width="16" height="16" viewBox="0 0 28 28"><use href="#gem-titan"/></svg></div>
+    </div>
+    <div class="portrait-block">
+      <div class="portrait-backdrop" style="background-image:url('/ref/illus/atlas.png')"></div>
+      <div class="portrait-img" style="background-image:url('/ref/illus/atlas.png')"></div>
+      <div class="name-band"><div class="card-name">Atlas</div></div>
+    </div>
+    <div class="stats-block">
+      <div class="stat-row peak">
+        <div class="stat-icon">⚔️</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Force</div><div class="stat-track"><div class="stat-fill" style="width:90%"></div></div></div>
+        <div class="stat-val">90</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">✨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Magie</div><div class="stat-track"><div class="stat-fill" style="width:30%"></div></div></div>
+        <div class="stat-val">30</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">🦉</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Ruse</div><div class="stat-track"><div class="stat-fill" style="width:25%"></div></div></div>
+        <div class="stat-val">25</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">💨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Vélocité</div><div class="stat-track"><div class="stat-fill" style="width:20%"></div></div></div>
+        <div class="stat-val">20</div>
+      </div>
+    </div>
+    <div class="card-strip bot">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+    </div>
+  </div>
+
+  <!-- ══ HERCULE ══ -->
+  <div class="card" data-cat="heros">
+    <div class="card-strip">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+      <div class="gem-overlay"><svg width="16" height="16" viewBox="0 0 28 28"><use href="#gem-heros"/></svg></div>
+    </div>
+    <div class="portrait-block">
+      <div class="portrait-backdrop" style="background-image:url('/ref/illus/hercule.png')"></div>
+      <div class="portrait-img" style="background-image:url('/ref/illus/hercule.png')"></div>
+      <div class="name-band"><div class="card-name">Hercule</div></div>
+    </div>
+    <div class="stats-block">
+      <div class="stat-row peak">
+        <div class="stat-icon">⚔️</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Force</div><div class="stat-track"><div class="stat-fill" style="width:99%"></div></div></div>
+        <div class="stat-val">99</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">✨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Magie</div><div class="stat-track"><div class="stat-fill" style="width:13%"></div></div></div>
+        <div class="stat-val">13</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">🦉</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Ruse</div><div class="stat-track"><div class="stat-fill" style="width:80%"></div></div></div>
+        <div class="stat-val">80</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">💨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Vélocité</div><div class="stat-track"><div class="stat-fill" style="width:40%"></div></div></div>
+        <div class="stat-val">40</div>
+      </div>
+    </div>
+    <div class="card-strip bot">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+    </div>
+  </div>
+
+  <!-- ══ MÉDUSE ══ -->
+  <div class="card" data-cat="creature">
+    <div class="card-strip">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+      <div class="gem-overlay"><svg width="16" height="16" viewBox="0 0 28 28"><use href="#gem-creature"/></svg></div>
+    </div>
+    <div class="portrait-block">
+      <div class="portrait-backdrop" style="background-image:url('/ref/illus/meduse.png')"></div>
+      <div class="portrait-img" style="background-image:url('/ref/illus/meduse.png')"></div>
+      <div class="name-band"><div class="card-name">Méduse</div></div>
+    </div>
+    <div class="stats-block">
+      <div class="stat-row">
+        <div class="stat-icon">⚔️</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Force</div><div class="stat-track"><div class="stat-fill" style="width:15%"></div></div></div>
+        <div class="stat-val">15</div>
+      </div>
+      <div class="stat-row peak">
+        <div class="stat-icon">✨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Magie</div><div class="stat-track"><div class="stat-fill" style="width:70%"></div></div></div>
+        <div class="stat-val">70</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">🦉</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Ruse</div><div class="stat-track"><div class="stat-fill" style="width:50%"></div></div></div>
+        <div class="stat-val">50</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">💨</div>
+        <div class="stat-bar-wrap"><div class="stat-label">Vélocité</div><div class="stat-track"><div class="stat-fill" style="width:26%"></div></div></div>
+        <div class="stat-val">26</div>
+      </div>
+    </div>
+    <div class="card-strip bot">
+      <svg viewBox="0 0 272 14"><use href="#m" x="0" y="0" width="80" height="14"/><use href="#m" x="96" y="0" width="80" height="14"/><use href="#m" x="192" y="0" width="80" height="14"/></svg>
+    </div>
+  </div>
+
+  <!-- ══ DOS DE CARTE ══ -->
+  <div class="card-back">
+    <img src="/card-back.png" style="width:100%;height:100%;display:block;border-radius:14px" alt="dos">
+    <svg style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 460" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <!-- Gradient Oméga : rouge sang au centre, bords très sombres -->
+        <radialGradient id="omega-fill" cx="48%" cy="38%" r="52%" fx="42%" fy="32%">
+          <stop offset="0%"   stop-color="#ff2a0a"/>
+          <stop offset="22%"  stop-color="#cc1a08"/>
+          <stop offset="55%"  stop-color="#880808"/>
+          <stop offset="85%"  stop-color="#4a0303"/>
+          <stop offset="100%" stop-color="#200101"/>
+        </radialGradient>
+
+        <!-- Reflets aléatoires sur l'Oméga -->
+        <radialGradient id="omega-glint1" cx="30%" cy="25%" r="30%">
+          <stop offset="0%"  stop-color="rgba(255,160,120,0.55)"/>
+          <stop offset="100%" stop-color="rgba(255,100,60,0)"/>
+        </radialGradient>
+        <radialGradient id="omega-glint2" cx="72%" cy="60%" r="22%">
+          <stop offset="0%"  stop-color="rgba(255,80,40,0.30)"/>
+          <stop offset="100%" stop-color="rgba(200,20,10,0)"/>
+        </radialGradient>
+        <radialGradient id="omega-glint3" cx="55%" cy="15%" r="18%">
+          <stop offset="0%"  stop-color="rgba(255,200,160,0.40)"/>
+          <stop offset="100%" stop-color="rgba(255,100,60,0)"/>
+        </radialGradient>
+
+        <!-- Lueur rouge ambiante derrière l'Oméga -->
+        <radialGradient id="omega-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="rgba(180,10,5,0.35)"/>
+          <stop offset="60%"  stop-color="rgba(120,5,2,0.15)"/>
+          <stop offset="100%" stop-color="rgba(80,0,0,0)"/>
+        </radialGradient>
+
+        <!-- Filtre lueur diffuse -->
+        <filter id="glow-f" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur stdDeviation="18" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+
+        <!-- Filtre Oméga : ombre interne + éclat -->
+        <filter id="omega-f" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <!-- Ombre portée sombre -->
+          <feDropShadow dx="0" dy="0" stdDeviation="22" flood-color="rgba(180,5,5,0.7)" result="glow"/>
+          <feDropShadow dx="4" dy="6" stdDeviation="6"  flood-color="rgba(0,0,0,0.8)"/>
+        </filter>
+
+        <!-- Bruit pour texture noire du fond -->
+        <filter id="noise-f" x="0%" y="0%" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="5" stitchTiles="stitch" result="noise"/>
+          <feColorMatrix type="saturate" values="0" in="noise" result="grey"/>
+          <feComponentTransfer in="grey" result="dark">
+            <feFuncR type="linear" slope="0.04" intercept="0.0"/>
+            <feFuncG type="linear" slope="0.04" intercept="0.0"/>
+            <feFuncB type="linear" slope="0.04" intercept="0.0"/>
+          </feComponentTransfer>
+          <feBlend in="SourceGraphic" in2="dark" mode="screen"/>
+        </filter>
+      </defs>
+
+      <!-- Fond noir avec micro-texture -->
+      <rect width="272" height="460" rx="14" fill="#080808" filter="url(#noise-f)"/>
+
+      <!-- Halo rouge derrière l'Oméga -->
+      <ellipse cx="136" cy="210" rx="115" ry="105" fill="url(#omega-glow)" filter="url(#glow-f)"/>
+
+      <!-- Cadre intérieur or sombre -->
+      <rect x="12" y="12" width="248" height="436" rx="9" fill="none" stroke="rgba(180,120,20,0.5)" stroke-width="1.5"/>
+      <rect x="15" y="15" width="242" height="430" rx="7" fill="none" stroke="rgba(180,120,20,0.2)" stroke-width="0.8"/>
+
+      <!-- Bandes méandre haut / bas (or sombre) -->
+      <g opacity="0.6" stroke="rgba(180,120,20,0.85)" fill="none" stroke-width="1.1" stroke-linecap="square">
+        <path transform="translate(14,15) scale(2.04,1)" d="M0,7 L4,7 4,2 18,2 18,12 10,12 10,9 14,9 14,5 10,5 10,12 22,12 22,2 32,2 32,7 28,7 28,5 32,5 M40,7 L44,7 44,2 58,2 58,12 50,12 50,9 54,9 54,5 50,5 50,12 62,12 62,2 72,2 72,7 68,7 68,5 72,5 72,12 80,12 M80,7 L84,7 84,2 98,2 98,12 90,12 90,9 94,9 94,5 90,5 90,12 102,12 102,2 112,2 112,7 108,7 108,5 112,5"/>
+        <path transform="translate(14,430) scale(2.04,1)" d="M0,7 L4,7 4,2 18,2 18,12 10,12 10,9 14,9 14,5 10,5 10,12 22,12 22,2 32,2 32,7 28,7 28,5 32,5 M40,7 L44,7 44,2 58,2 58,12 50,12 50,9 54,9 54,5 50,5 50,12 62,12 62,2 72,2 72,7 68,7 68,5 72,5 72,12 80,12 M80,7 L84,7 84,2 98,2 98,12 90,12 90,9 94,9 94,5 90,5 90,12 102,12 102,2 112,2 112,7 108,7 108,5 112,5"/>
+      </g>
+
+      <!-- Ω rouge sang — grand, centré -->
+      <!-- Couche 1 : lueur profonde -->
+      <text x="136" y="215" dominant-baseline="middle" text-anchor="middle"
+            font-family="Cinzel, Georgia, serif" font-weight="900" font-size="240"
+            fill="rgba(200,8,5,0.25)" filter="url(#glow-f)">Ω</text>
+      <!-- Couche 2 : corps principal avec gradient -->
+      <text x="136" y="215" dominant-baseline="middle" text-anchor="middle"
+            font-family="Cinzel, Georgia, serif" font-weight="900" font-size="240"
+            fill="url(#omega-fill)" filter="url(#omega-f)">Ω</text>
+      <!-- Couche 3 : reflets aléatoires (masqués sur la forme de l'Oméga via clip du text) -->
+      <text x="136" y="215" dominant-baseline="middle" text-anchor="middle"
+            font-family="Cinzel, Georgia, serif" font-weight="900" font-size="240"
+            fill="url(#omega-glint1)" opacity="0.9">Ω</text>
+      <text x="136" y="215" dominant-baseline="middle" text-anchor="middle"
+            font-family="Cinzel, Georgia, serif" font-weight="900" font-size="240"
+            fill="url(#omega-glint2)" opacity="0.8">Ω</text>
+      <text x="136" y="215" dominant-baseline="middle" text-anchor="middle"
+            font-family="Cinzel, Georgia, serif" font-weight="900" font-size="240"
+            fill="url(#omega-glint3)" opacity="0.7">Ω</text>
+
+      <!-- Étiquette -->
+      <text x="136" y="435" dominant-baseline="middle" text-anchor="middle"
+            font-family="Cinzel Decorative, Cinzel, serif" font-size="9" font-weight="700"
+            letter-spacing="5" fill="rgba(180,120,20,0.6)">MYTHOLOGIE</text>
+    </svg>
+  </div>
+
+</div>
+
+<script>
+const STOPS = [
+  [0,   [255, 255, 255]],
+  [12,  [160, 200, 255]],
+  [25,  [ 50, 110, 255]],
+  [42,  [  0, 210, 140]],
+  [58,  [ 50, 210,  50]],
+  [72,  [240, 230,   0]],
+  [85,  [255, 120,   0]],
+  [100, [255,   0,   0]],
+]
+
+function heatRGB(pct) {
+  pct = Math.max(0, Math.min(100, pct))
+  for (let i = 0; i < STOPS.length - 1; i++) {
+    const [a, ca] = STOPS[i], [b, cb] = STOPS[i + 1]
+    if (pct >= a && pct <= b) {
+      const t = (b === a) ? 0 : (pct - a) / (b - a)
+      return [
+        Math.round(ca[0] + t * (cb[0] - ca[0])),
+        Math.round(ca[1] + t * (cb[1] - ca[1])),
+        Math.round(ca[2] + t * (cb[2] - ca[2])),
+      ]
+    }
+  }
+  return STOPS[STOPS.length - 1][1]
+}
+
+function rgba(pct, a) {
+  const [r, g, b] = heatRGB(pct)
+  return `rgba(${r},${g},${b},${a})`
+}
+
+document.querySelectorAll('.stat-row').forEach(row => {
+  const fill = row.querySelector('.stat-fill')
+  const val  = row.querySelector('.stat-val')
+  if (!fill || !val) return
+  const pct = parseFloat(fill.style.width) || 0
+  fill.style.background = `linear-gradient(90deg, ${rgba(pct,.5)} 0%, ${rgba(pct,1)} 100%)`
+  val.style.color = rgba(pct, 1)
+  val.style.textShadow = `0 0 10px ${rgba(pct,.4)}, 0 1px 3px rgba(0,0,0,.9)`
+  row.style.setProperty('--heat', rgba(pct, .45))
+})
+</script>
+</body>
+</html>
